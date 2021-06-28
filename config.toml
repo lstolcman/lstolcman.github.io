@@ -1,0 +1,4 @@
+baseURL = "https://lstolcman.github.io"
+languageCode = "en-us"
+title = "lstolcman blog"
+theme = "hugo-theme-yinyang"
