@@ -4,7 +4,8 @@ title = "lstolcman blog"
 theme = "hugo-theme-yinyang"
 enableEmoji = "true"
 footnoteReturnLinkContents = "↩"
-enableRobotsTXT = "true"
+# enableRobotsTXT = "true"
+defaultContentLanguage = 'en'
 [permalinks]
   posts = "/:year/:month/:title/"
 
