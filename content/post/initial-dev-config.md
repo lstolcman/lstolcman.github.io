@@ -7,7 +7,7 @@ draft: false
 
 # Git
 
-A version control, which anybody should be familiar with (at least when one is a developer ;)).
+A version control, which anybody should be familiar with (at least when one is a developer :grinning:).
 
 The configuration is simple two steps - ssh keys generation, and `.gitconfig`
 
