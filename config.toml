@@ -6,8 +6,8 @@ enableEmoji = "true"
 footnoteReturnLinkContents = "↩"
 # enableRobotsTXT = "true"
 defaultContentLanguage = 'en'
-[permalinks]
-  posts = "/:year/:month/:title/"
+# [permalinks]
+#   posts = "/:year/:month/:title/"
 
 [params]
 headTitle = "lstolcman blog"
