@@ -2,6 +2,8 @@
 title: "Wireguard config"
 date: 2021-06-29T00:38:00+02:00
 draft: false
+categories: [tech]
+tags: [wireguard,vpn]
 ---
 
 Configuring wireguard is extremely easy.

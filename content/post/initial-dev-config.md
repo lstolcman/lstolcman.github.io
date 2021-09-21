@@ -2,6 +2,8 @@
 title: "Initial dev config of cmder and git"
 date: 2021-09-21T21:39:59+02:00
 draft: false
+categories: [tech]
+tags: [git,cmder,ssh]
 ---
 
 
