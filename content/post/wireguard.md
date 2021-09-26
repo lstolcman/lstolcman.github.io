@@ -91,3 +91,5 @@ PersistentKeepalive = 25
 If you want to create a virtual LAN, put `AllowedIPs = 10.0.0.0/8` instead - so it will cover
 all range of `10.x.x.x` private addresses over your virtual wireguard network.
 More on this [in the wireguard documentation](https://www.wireguard.com/#cryptokey-routing).
+
+More on IPv6 forwarding [here](https://docs.pi-hole.net/guides/vpn/wireguard/internal/)
