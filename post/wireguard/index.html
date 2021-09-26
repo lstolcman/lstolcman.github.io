@@ -107,8 +107,8 @@ AllowedIPs = 10.0.0.2/32
 #AllowedIPs = 10.0.0.3/32
 
 # and so on...
-</code></pre><p><code>priv1</code> contents goes to <code>/etc/wireguard/privatekey</code>
-<code>pub1</code> contents goes to <code>/etc/wireguard/publickey</code></p>
+</code></pre><p><code>priv1</code> contents goes to <code>/etc/wireguard/privatekey</code></p>
+<p><code>pub1</code> contents goes to <code>/etc/wireguard/publickey</code></p>
 <ul>
 <li>client configuration:</li>
 </ul>
@@ -124,8 +124,8 @@ Endpoint = &lt;your wireguard server ip or host&gt;:51820
 PersistentKeepalive = 25
 </code></pre><p><code>AllowedIPs = 0.0.0.0/0, ::/0</code> means, that all traffic will be routed via VPN (both IPv4 and v6).
 If you want to create a virtual LAN, put <code>AllowedIPs = 10.0.0.0/8</code> instead - so it will cover
-all range of <code>10.x.x.x</code> private addresses over your virtual wireguard network.
-More on this <a href=https://www.wireguard.com/#cryptokey-routing>in the wireguard documentation</a>.</p>
+all range of <code>10.x.x.x</code> private addresses over your virtual wireguard network.</p>
+<p>More on this <a href=https://www.wireguard.com/#cryptokey-routing>in the wireguard documentation</a>.</p>
 <p>More on IPv6 forwarding <a href=https://docs.pi-hole.net/guides/vpn/wireguard/internal/>here</a></p>
 </div>
 <div class="row middle-xs">
