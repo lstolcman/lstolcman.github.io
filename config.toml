@@ -1,6 +1,6 @@
 baseURL = "https://lstolcman.github.io"
 languageCode = "en-us"
-title = "lstolcman blog"
+title = "lstolcman Today-I-Learned"
 theme = "hugo-theme-yinyang"
 enableEmoji = "true"
 footnoteReturnLinkContents = "↩"
@@ -10,7 +10,7 @@ defaultContentLanguage = 'en'
 #   posts = "/:year/:month/:title/"
 
 [params]
-headTitle = "lstolcman blog"
+headTitle = "lstolcman Today-I-Learned"
 # postHeaderContent = ""
 # postFooterContent = "<br/><br/><p>Subscribe：<a target='_blank' href='https://mailchi.mp/a1a0d59e7a19/joway'>Joway's Blog</a></p>"
 
