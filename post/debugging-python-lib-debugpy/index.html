@@ -79,11 +79,11 @@ packages are installed as usual, using <code>pip</code>.</p>
 <ol>
 <li>
 <p>VS Code configuration for debugging</p>
-<p><img src=create-debug-config-create.png alt="Select debugging">
-<img src=create-debug-config-python.png alt="Select python">
-<img src=create-debug-config-remote-attach.png alt="Select Remote attach"></p>
+<p><img src=/images/create-debug-config-create.png alt="Select debugging">
+<img src=/images/create-debug-config-python.png alt="Select python">
+<img src=/images/create-debug-config-remote-attach.png alt="Select Remote attach"></p>
 <p>The most important step afterwards - set <code>justMyCode</code> to <code>false</code>:</p>
-<p><img src=create-debug-config-justmycode.png alt="Select Remote attach"></p>
+<p><img src=/images/create-debug-config-justmycode.png alt="Select Remote attach"></p>
 </li>
 <li>
 <p>Running the subject with debugger attached</p>
@@ -91,7 +91,7 @@ packages are installed as usual, using <code>pip</code>.</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-sh data-lang=sh><span style=color:#f92672>(</span>venv<span style=color:#f92672>)</span> λ python -m debugpy --listen 0.0.0.0:5678 --wait-for-client  -m pre_commit run --all-files
 </code></pre></div><p>The debugger is waiting for attach. What&rsquo;s left is finding your library entrypoint,
 setting a breakpoint, and starting debugging.</p>
-<p><img src=pre-commit-main.png alt="Finding pre-commit main function and setting a breakpoint"></p>
+<p><img src=/images/pre-commit-main.png alt="Finding pre-commit main function and setting a breakpoint"></p>
 </li>
 </ol>
 </div>
