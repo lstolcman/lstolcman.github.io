@@ -56,6 +56,15 @@ Address = 10.0.0.1/24
 PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
 
+
+# in the digitalocean tutorial, the rules makes that one cannot connect to rdp via vpn, so they are invalid:
+#PostUp = ufw route allow in on wg0 out on eth0
+#PostUp = iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE
+#PostUp = ip6tables -t nat -I POSTROUTING -o eth0 -j MASQUERADE
+#PreDown = ufw route delete allow in on wg0 out on eth0
+#PreDown = iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
+#PreDown = ip6tables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
+
 # client 1
 [Peer]
 PublicKey = QUVp/W3gx2LAQzPpAD5GiOZP21nkh4j+FoectuZFGRM=
@@ -93,7 +102,18 @@ If you want to create a virtual LAN, put `AllowedIPs = 10.0.0.0/8` instead - so 
 all range of `10.x.x.x` private addresses over your virtual wireguard network.
 
 
+Edit `sysctl.conf` - add line
+
+```
+net.ipv4.ip_forward=1
+```
+
+then do `sysctl -p`
+
+
 More on this [in the wireguard documentation](https://www.wireguard.com/#cryptokey-routing).
 
 
 More on IPv6 forwarding [here](https://docs.pi-hole.net/guides/vpn/wireguard/internal/)
+
+More on wireguard config [here](https://www.digitalocean.com/community/tutorials/how-to-set-up-wireguard-on-ubuntu-20-04)
