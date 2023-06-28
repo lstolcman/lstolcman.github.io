@@ -20,7 +20,6 @@ The env is as following:
 Let's create a sample *compose* file, and try to let it running using podman compose (create `compose.yml` and then do `podman-compose up`):
 
 ```yml
-version: '3'
 services:
   base:
     image: alpine:latest
