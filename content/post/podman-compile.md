@@ -243,3 +243,41 @@ https://www.redhat.com/sysadmin/quadlet-podman
 https://docs.podman.io/en/latest/markdown/podman-system-service.1.html - should be deprecated in docs
 
 
+update:
+it is not removed just only not compiled with flag systemd
+
+
+# podman systemd confg files
+
+
+```sh
+➜  podman cat /usr/lib/systemd/system/podman.service
+[Unit]
+Description=Podman API Service
+Requires=podman.socket
+After=podman.socket
+Documentation=man:podman-system-service(1)
+StartLimitIntervalSec=0
+
+[Service]
+Delegate=true
+Type=exec
+KillMode=process
+Environment=LOGGING="--log-level=info"
+ExecStart=/usr/bin/podman $LOGGING system service
+
+[Install]
+WantedBy=default.target
+➜  podman cat /usr/lib/systemd/system/podman.socket
+[Unit]
+Description=Podman API Socket
+Documentation=man:podman-system-service(1)
+
+[Socket]
+ListenStream=%t/podman/podman.sock
+SocketMode=0660
+
+[Install]
+WantedBy=sockets.target
+
+```
