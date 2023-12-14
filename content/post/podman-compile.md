@@ -220,3 +220,26 @@ alias docker=podman
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
 ```
 
+
+
+
+
+# podman system service
+
+podman 4.7.1 contains command for generating socket:
+
+```
+podman system service
+```
+
+however, it looks like it is removed in podman 4.8
+
+they say it was deprecated in favor of quadlets:
+
+https://github.com/containers/podman/discussions/20218
+
+https://www.redhat.com/sysadmin/quadlet-podman
+
+https://docs.podman.io/en/latest/markdown/podman-system-service.1.html - should be deprecated in docs
+
+
