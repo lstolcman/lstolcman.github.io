@@ -1,6 +1,6 @@
 ---
 title: "Configuring raspberry pi 1"
-date: 2023-19-19T07:25:00+01:00
+date: 2023-10-19T07:25:00+01:00
 draft: false
 categories: [tech]
 tags: [raspberry-pi,ubuntu]
