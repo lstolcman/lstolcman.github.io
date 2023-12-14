@@ -208,3 +208,15 @@ put file in `$HOME/.config/containers/storage.conf`
 
 https://raw.githubusercontent.com/containers/storage/main/storage.conf
 
+
+
+
+# podman and docker-compose, docker alias
+
+For zsh, open `~/.zshrc` and put:
+
+```sh
+alias docker=podman
+export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
+```
+
