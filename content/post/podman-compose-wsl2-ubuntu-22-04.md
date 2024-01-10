@@ -1,5 +1,5 @@
 ---
-title: "podman and podman-compose in Ubuntu 22.04.3 (WSL2)"
+title: "podman and docker-compose in Ubuntu 22.04.3 (WSL2)"
 date: 2024-01-11T00:07:00+02:00
 draft: false
 categories: [tech]
@@ -9,7 +9,7 @@ tags: [ubuntu,podman,containers,wsl2]
 
 Ubuntu reports fairly old version od podman in its default apt registry.
 
-Here I will present how to install podman 4.6.2 from separate apt.
+Here I will present how to install podman 4.6.2 from separate apt. Afterwards, we'll also configure podman socket, install docker-compose and run example scripts.
 
 
 # System
@@ -27,7 +27,10 @@ Codename:       jammy
 
 # Adding apt repository
 
+Stock ubuntu does have podman but in ancient version 3.x something. To install newer version using apt, we need to add a kubic repository, [as suggested in podman readme](https://podman.io/docs/installation#ubuntu).
+
 The source is [here](https://software.opensuse.org//download.html?project=devel%3Akubic%3Alibcontainers%3Aunstable&package=podman).
+
 Execute following lines in a console:
 
 ```sh
@@ -291,7 +294,6 @@ EOF
 cat compose.yml
 
 docker-compose up
-
 ```
 
 Example output:
@@ -326,7 +328,6 @@ base-1 exited with code 0
 When trying to run sample flask project from awesome-compose [here](https://github.com/docker/awesome-compose/tree/e6b1d2755f2f72a363fc346e52dce10cace846c8/flask), it fails:
 
 ```sh
-
 ➜  flask git:(master) ✗ docker-compose up
 [+] Building 7.5s (1/1) FINISHED                                                                                                                                                                                                                                             docker-container:default  => ERROR [web internal] booting buildkit                                                                                                                                                                                                                                                        7.5s  => => pulling image moby/buildkit:buildx-stable-1                                                                                                                                                                                                                                               5.8s  => => creating container buildx_buildkit_default                                                                                                                                                                                                                                                1.7s ------
  > [web internal] booting buildkit:
@@ -334,10 +335,9 @@ When trying to run sample flask project from awesome-compose [here](https://gith
 Error response from daemon: crun: creating cgroup directory `/sys/fs/cgroup/systemd/docker/buildx/libpod-f8c765ccab51b09b5d3b676cfc9ebeda351e481ee131e5397acb61eb312c41d3`: No such file or directory: OCI runtime attempted to invoke a command that was not found
 ```
 
-You should disable buildkit by adding `DOCKER_BUILDKIT=0` before command (or: do `export DOCKER_BUILDKIT=0`, best if put this in your bashrc or zshrc file):
+You should disable buildkit by adding `DOCKER_BUILDKIT=0` before command (better: do `export DOCKER_BUILDKIT=0` before executing a command. best: put this export statement in your `.bashrc` or `.zshrc` file):
 
 ```sh
-
 ➜  flask git:(master) ✗ DOCKER_BUILDKIT=0 docker-compose up
 Sending build context to Docker daemon     597B
 STEP 1/8: FROM python:3.10-alpine AS builder
