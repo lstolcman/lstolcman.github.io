@@ -323,6 +323,8 @@ base-1 exited with code 0
 
 # possible errors
 
+When trying to run sample flask project from awesome-compose [here](https://github.com/docker/awesome-compose/tree/e6b1d2755f2f72a363fc346e52dce10cace846c8/flask), it fails:
+
 ```sh
 
 ➜  flask git:(master) ✗ docker-compose up
