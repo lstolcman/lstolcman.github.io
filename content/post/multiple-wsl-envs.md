@@ -1,6 +1,6 @@
 ---
 title: "Multiple WSL environments"
-date: 2022-02-11T19:55:00+01:00
+date: 2024-02-11T19:55:00+01:00
 draft: false
 categories: [tech]
 tags: [wsl]
