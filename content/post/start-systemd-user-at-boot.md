@@ -1,6 +1,6 @@
 ---
 title: "How to start systemd user services at boot"
-date: 2024-03-12T00:10:00+01:00
+date: 2024-02-12T00:10:00+01:00
 draft: false
 categories: [tech]
 tags: [linux,systemd]
