@@ -2,4 +2,4 @@
 The configuration is simple two steps - ssh keys generation, and .gitconfig
 generating ssh keys Covered in Cmder minimal section
 .gitconfig Basic config with aliases, additional tools&amp;hellip;.
-[core] editor = \&amp;#34;C:/tools/GitExtensions/GitExtensions.exe\&amp;#34; fileeditor [user] email = ... name = ... [alias] co = checkout ci = commit st = status br = branch [pull] rebase = false [fetch] prune = false [rebase] autoStash = false Cmder&amp;hellip; &amp;hellip;is one of a nice applications, which bnrings you more closer to linux terminal look-and-feel.</description></item></channel></rss>
+[core] editor = \&amp;#34;C:/tools/GitExtensions/GitExtensions.exe\&amp;#34; fileeditor # editor = vim autocrlf = true # commentChar = &amp;#34;;&amp;#34; # in case hash is not desired comment char in the commit message files [user] email = .</description></item></channel></rss>
