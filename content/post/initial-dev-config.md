@@ -22,8 +22,12 @@ Covered in [Cmder minimal](#cmder-minimal) section
 Basic config with [aliases](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases), [additional tools](https://gitextensions.github.io/)....
 
 ```sh
+
 [core]
 	editor = \"C:/tools/GitExtensions/GitExtensions.exe\" fileeditor
+	# editor = vim
+	autocrlf = true
+    # commentChar = ";" # in case hash is not desired comment char in the commit message files
 [user]
 	email = ...
 	name = ...
@@ -38,8 +42,25 @@ Basic config with [aliases](https://git-scm.com/book/en/v2/Git-Basics-Git-Aliase
 	prune = false
 [rebase]
 	autoStash = false
+```
+
+## `.gitattributes`
+
+Normalizes end-of-line covnetion. Needed to be added at the init of a repository.
+
+If you add it to the existing repo, run `git add --renormalize .` and commit the changes.
+ 
+.gitattributes contents: 
 
 ```
+* text=auto eol=lf
+*.{cmd,[cC][mM][dD]} text eol=crlf
+*.{bat,[bB][aA][tT]} text eol=crlf
+```
+
+more readings:
+- https://stackoverflow.com/questions/1967370/git-replacing-lf-with-crlf
+- https://stackoverflow.com/questions/7156694/git-how-to-renormalize-line-endings-in-all-files-in-all-revisions
 
 
 # [Cmder](https://cmder.net/)...
