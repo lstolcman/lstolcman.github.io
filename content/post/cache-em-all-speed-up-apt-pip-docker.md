@@ -104,7 +104,7 @@ services:
       - "host.docker.internal:host-gateway"
 ```
 
-Note the "extra_hosts" - this is the mechanism which will make sure the contaienr has access to hsot system
+Note the "extra_hosts" - this is the mechanism which will make sure the container has access to hsot system
 
 read more [1] [2]
 
