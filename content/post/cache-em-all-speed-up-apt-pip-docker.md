@@ -22,7 +22,7 @@ There are two options of caching:
 
 ## mount cache
 
-Docker mechanism to cache layers.
+Docker mechanism to cache layers: https://docs.docker.com/build/cache/
 
 Dockerfile extract:
 ```sh
