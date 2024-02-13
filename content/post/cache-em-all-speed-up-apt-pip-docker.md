@@ -58,17 +58,7 @@ It is a nice addition to mount cache mechanism - even if the mount cache did not
 Step by step tutorial how to configure:
 
 
-1. Create background service with name. Note the `--network=host` - the container will be in host network, which should be accessible
-    from the other containers.
-
-```sh
-docker run --name apt-cacher-ng --init -d --restart=always \
---network=host \
---volume /var/cache/apt-cacher-ng:/var/cache/apt-cacher-ng \
-sameersbn/apt-cacher-ng
-```
-
-you may want to execute it like
+1. Create background service with name:
 
 ```sh
 docker run --name apt-cacher-ng --init -d --restart=always \
@@ -77,13 +67,22 @@ docker run --name apt-cacher-ng --init -d --restart=always \
 sameersbn/apt-cacher-ng
 ```
 
-this won't not work, because the other containers are not in the same network
 
 Check whether cacher works by visiting a page via browser - go to http://localhost:3142 and you should see a page.
 (Replace localhost with ip of your container if needed, e.g. in case of wsl2 or vm).
 
-Once you have cacher set up, lets create a Containerfile which will use it:
+In case something not working, try with host network:
 
+```sh
+docker run --name apt-cacher-ng --init -d --restart=always \
+--network=host \
+--volume /var/cache/apt-cacher-ng:/var/cache/apt-cacher-ng \
+sameersbn/apt-cacher-ng
+```
+
+
+Once you have cacher set up, lets create a Containerfile which will use the caching container.
+We'll create Dockerfile and docker-compose.yaml to configure it easily:
 
 example `compose.yaml`:
 
@@ -104,7 +103,7 @@ services:
       - "host.docker.internal:host-gateway"
 ```
 
-Note the "extra_hosts" - this is the mechanism which will make sure the container has access to hsot system
+Note the "extra_hosts" - this is the mechanism which will make sure the container has access to the host network. **It wont work without it.**
 
 read more [1] [2]
 
@@ -123,7 +122,7 @@ It is imporant, because the apps would be downloaded one by one, and then instal
 Having it as separate command would install it. The subsequent command is going to use `apt-cacher-ng` because the script
 will be present in the system.
 
-[auto-pat-proxy source code](https://salsa.debian.org/debian/auto-apt-proxy)
+[auto-apt-proxy source code](https://salsa.debian.org/debian/auto-apt-proxy)
 
 
 Refs:
@@ -132,8 +131,6 @@ Refs:
 [3] https://blog.packagecloud.io/using-apt-cacher-ng-with-ssl-tls/
 [4] https://razinj.dev/build-and-run-apt-cacher-ng-proxy-in-docker/
 [5] https://medium.com/@TimvanBaarsen/how-to-connect-to-the-docker-host-from-inside-a-docker-container-112b4c71bc66
-
-
 
 
 
@@ -152,7 +149,13 @@ The best way to cache python installs is to do mount cache.
 ## mount cache -- pip
 
 
-Not yet there
+Dockerfile extract:
+
+```
+RUN --mount=type=cache,mode=0755,target=/var/cache/pip \
+    pip install --cache-dir=/var/cache/pip
+    requests [..other packages..]
+```
 
 https://stackoverflow.com/questions/58018300/using-a-pip-cache-directory-in-docker-builds
 
@@ -163,7 +166,11 @@ https://pmac.io/2019/02/multi-stage-dockerfile-and-python-virtualenv/
 
 1. configure poetry: `RUN poetry config cache-dir /var/cache/poetry-cache`
     a. you can set env variable as well: https://python-poetry.org/docs/configuration/#cache-dir
-2. install but prefix with (buildkit) mount entry: `RUN --mount=type=cache,mode=0755,target=/var/cache/poetry-cache  poetry install`
+2. install but prefix with (buildkit) mount entry:
+    ```
+    RUN --mount=type=cache,mode=0755,target=/var/cache/poetry-cache \
+    poetry install
+    ```
 3. it should work after rebuild with `--no-cache`.
 
 
