@@ -8,7 +8,7 @@ tags: [smart]
 
 What are the interpretation of CrystalDiskInfo parameters? How to understand the health of a hard disk via reading SMART?
 
-![CrystalDiskInfo parameters example](image.png)
+![CrystalDiskInfo parameters example](/images/crystaldiskinfo.png)
 
 
 - RAW value (hex/dec)
