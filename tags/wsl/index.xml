@@ -1,5 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Wsl on lstolcman Today-I-Learned</title><link>https://lstolcman.github.io/tags/wsl/</link><description>Recent content in Wsl on lstolcman Today-I-Learned</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 11 Feb 2024 19:55:00 +0100</lastBuildDate><atom:link href="https://lstolcman.github.io/tags/wsl/index.xml" rel="self" type="application/rss+xml"/><item><title>Multiple WSL environments</title><link>https://lstolcman.github.io/post/multiple-wsl-envs/</link><pubDate>Sun, 11 Feb 2024 19:55:00 +0100</pubDate><guid>https://lstolcman.github.io/post/multiple-wsl-envs/</guid><description>Not so easy way to figure out, but there is a way to have multiple wsl instances.
-Assuming you do not have any distributions installed (check via wsl --list -v), install the clean one:
-wsl --install Ubuntu-22.04 Enter the instance and do the necessary configuration (it&amp;rsquo;ll be the default for your instances)
-Then, export the instance
-wsl --export Ubuntu-22.04 c:\dev\wsl\wsl-clean-instance-ubuntu2204 If you like to create a new instance, type: wsl --import myinstance c:\dev\wsl\instances\myinstance c:\dev\wsl\wsl-clean-instance-ubuntu2204 and enter into instance:</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Wsl on lstolcman Today-I-Learned</title><link>https://lstolcman.github.io/tags/wsl/</link><description>Recent content in Wsl on lstolcman Today-I-Learned</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 11 Feb 2024 19:55:00 +0100</lastBuildDate><atom:link href="https://lstolcman.github.io/tags/wsl/index.xml" rel="self" type="application/rss+xml"/><item><title>Multiple WSL environments</title><link>https://lstolcman.github.io/post/multiple-wsl-envs/</link><pubDate>Sun, 11 Feb 2024 19:55:00 +0100</pubDate><guid>https://lstolcman.github.io/post/multiple-wsl-envs/</guid><description>&lt;p>Not so easy way to figure out, but there is a way to have multiple wsl instances.&lt;/p>
+&lt;p>Assuming you do not have any distributions installed (check via &lt;code>wsl --list -v&lt;/code>), install the clean one:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>wsl --install Ubuntu-22.04
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol>
+&lt;li>
+&lt;p>Enter the instance and do the necessary configuration (it&amp;rsquo;ll be the default for your instances)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Then, export the instance&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;pre tabindex="0">&lt;code class="language-ssh" data-lang="ssh">wsl --export Ubuntu-22.04 c:\dev\wsl\wsl-clean-instance-ubuntu2204
+&lt;/code>&lt;/pre>&lt;ol start="3">
+&lt;li>If you like to create a new instance, type:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>wsl --import myinstance c:&lt;span style="color:#ae81ff">\d&lt;/span>ev&lt;span style="color:#ae81ff">\w&lt;/span>sl&lt;span style="color:#ae81ff">\i&lt;/span>nstances&lt;span style="color:#ae81ff">\m&lt;/span>yinstance c:&lt;span style="color:#ae81ff">\d&lt;/span>ev&lt;span style="color:#ae81ff">\w&lt;/span>sl&lt;span style="color:#ae81ff">\w&lt;/span>sl-clean-instance-ubuntu2204
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and enter into instance:&lt;/p></description></item></channel></rss>

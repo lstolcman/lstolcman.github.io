@@ -1,2 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Raspberry-Pi on lstolcman Today-I-Learned</title><link>https://lstolcman.github.io/tags/raspberry-pi/</link><description>Recent content in Raspberry-Pi on lstolcman Today-I-Learned</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 19 Oct 2023 07:25:00 +0100</lastBuildDate><atom:link href="https://lstolcman.github.io/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuring raspberry pi 1</title><link>https://lstolcman.github.io/post/configure-rpi1/</link><pubDate>Thu, 19 Oct 2023 07:25:00 +0100</pubDate><guid>https://lstolcman.github.io/post/configure-rpi1/</guid><description>This is a draft notes of my journey to set-up raspberry pi 1 (the oldest one, on arm v6 procesor), and some notes about syncthing
-Execute parted command to start parted Suppose, /dev/sda is the device on which to remove the partition. Use the parted commnad with the /dev/sda device as shown below: parted /dev/sda View partition table to determine the minor number of the partition to remove: print Remove the partition with the command rm.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Raspberry-Pi on lstolcman Today-I-Learned</title><link>https://lstolcman.github.io/tags/raspberry-pi/</link><description>Recent content in Raspberry-Pi on lstolcman Today-I-Learned</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 19 Oct 2023 07:25:00 +0100</lastBuildDate><atom:link href="https://lstolcman.github.io/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuring raspberry pi 1</title><link>https://lstolcman.github.io/post/configure-rpi1/</link><pubDate>Thu, 19 Oct 2023 07:25:00 +0100</pubDate><guid>https://lstolcman.github.io/post/configure-rpi1/</guid><description>&lt;p>This is a draft notes of my journey to set-up raspberry pi 1 (the oldest one, on arm v6 procesor), and some notes about syncthing&lt;/p>
+&lt;ol>
+&lt;li>Execute parted command to start&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>parted
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>Suppose, /dev/sda is the device on which to remove the partition. Use the parted commnad with the /dev/sda device as shown below:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>parted /dev/sda
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>View partition table to determine the minor number of the partition to remove:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>print
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
+&lt;li>Remove the partition with the command rm. For example, to remove the partition with minor number 2:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>rm &lt;span style="color:#ae81ff">2&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>creating partition&lt;/p></description></item></channel></rss>

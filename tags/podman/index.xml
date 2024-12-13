@@ -1,11 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Podman on lstolcman Today-I-Learned</title><link>https://lstolcman.github.io/tags/podman/</link><description>Recent content in Podman on lstolcman Today-I-Learned</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 12 Feb 2024 23:07:00 +0200</lastBuildDate><atom:link href="https://lstolcman.github.io/tags/podman/index.xml" rel="self" type="application/rss+xml"/><item><title>Cache'em all! - speeding up apt and other downloads in (not only) docker containers (2024 version)</title><link>https://lstolcman.github.io/post/cache-em-all-speed-up-apt-pip-docker/</link><pubDate>Mon, 12 Feb 2024 23:07:00 +0200</pubDate><guid>https://lstolcman.github.io/post/cache-em-all-speed-up-apt-pip-docker/</guid><description>When working on couple of DockerfilesContainerfiles, I was having a situation when I had to clear dockerpodman cache (for various reasons), and the indispensable step is to update or download certain packages from apt. It is often long process, and I was thinking whether there&amp;rsquo;s a way to speed it up or optimize.
-The results of the investigation are below:
-Caching apt get downloads There are two options of caching:</description></item><item><title>podman and docker-compose in Ubuntu 22.04.3 (WSL2)</title><link>https://lstolcman.github.io/post/podman-compose-wsl2-ubuntu-22-04/</link><pubDate>Thu, 11 Jan 2024 00:07:00 +0200</pubDate><guid>https://lstolcman.github.io/post/podman-compose-wsl2-ubuntu-22-04/</guid><description>Ubuntu reports fairly old version od podman in its default apt registry.
-Here I will present how to install podman 4.6.2 from separate apt. Afterwards, we&amp;rsquo;ll also configure podman socket, install docker-compose and run example scripts.
-System I am using wsl2 with ubuntu 22 lts:
-➜ lsb_release -a No LSB modules are available. Distributor ID: Ubuntu Description: Ubuntu 22.04.3 LTS Release: 22.04 Codename: jammy Adding apt repository Stock ubuntu does have podman but in ancient version 3.</description></item><item><title>Podman compiling from source</title><link>https://lstolcman.github.io/post/podman-compile/</link><pubDate>Wed, 18 Oct 2023 13:39:00 +0100</pubDate><guid>https://lstolcman.github.io/post/podman-compile/</guid><description>This post is a draft.
-Podman newset version in couple of quick steps
-As the title says, if you need newest version of podman, you have to build from source. However, you don&amp;rsquo;t have to build all the necessary 3rd party elements from source (such as go)
-1.0 Installation of go wget https://go.dev/dl/go1.21.3.linux-amd64.tar.gz when follow installtion from
-https://go.dev/doc/install
-2.0 conmon download, chmod +x, rename and copy to usr local bin</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Podman on lstolcman Today-I-Learned</title><link>https://lstolcman.github.io/tags/podman/</link><description>Recent content in Podman on lstolcman Today-I-Learned</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Mon, 12 Feb 2024 23:07:00 +0200</lastBuildDate><atom:link href="https://lstolcman.github.io/tags/podman/index.xml" rel="self" type="application/rss+xml"/><item><title>Cache'em all! - speeding up apt and other downloads in (not only) docker containers (2024 version)</title><link>https://lstolcman.github.io/post/cache-em-all-speed-up-apt-pip-docker/</link><pubDate>Mon, 12 Feb 2024 23:07:00 +0200</pubDate><guid>https://lstolcman.github.io/post/cache-em-all-speed-up-apt-pip-docker/</guid><description>&lt;p>When working on couple of &lt;del>Dockerfiles&lt;/del>Containerfiles, I was having a situation when I had to clear
+&lt;del>docker&lt;/del>podman cache (for various reasons), and the indispensable step is to update or download certain
+packages from apt. It is often long process, and I was thinking whether there&amp;rsquo;s a way to speed it up or
+optimize.&lt;/p>
+&lt;p>The results of the investigation are below:&lt;/p>
+&lt;h1 id="caching-apt-get-downloads">Caching apt get downloads&lt;/h1>
+&lt;p>There are two options of caching:&lt;/p></description></item><item><title>podman and docker-compose in Ubuntu 22.04.3 (WSL2)</title><link>https://lstolcman.github.io/post/podman-compose-wsl2-ubuntu-22-04/</link><pubDate>Thu, 11 Jan 2024 00:07:00 +0200</pubDate><guid>https://lstolcman.github.io/post/podman-compose-wsl2-ubuntu-22-04/</guid><description>&lt;p>Ubuntu reports fairly old version od podman in its default apt registry.&lt;/p>
+&lt;p>Here I will present how to install podman 4.6.2 from separate apt. Afterwards, we&amp;rsquo;ll also configure podman socket, install docker-compose and run example scripts.&lt;/p>
+&lt;h1 id="system">System&lt;/h1>
+&lt;p>I am using wsl2 with ubuntu 22 lts:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>➜ lsb_release -a
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>No LSB modules are available.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Distributor ID: Ubuntu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Description: Ubuntu 22.04.3 LTS
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Release: 22.04
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Codename: jammy
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="adding-apt-repository">Adding apt repository&lt;/h1>
+&lt;p>Stock ubuntu does have podman but in ancient version 3.x something. To install newer version using apt, we need to add a kubic repository, &lt;a href="https://podman.io/docs/installation#ubuntu">as suggested in podman readme&lt;/a>.&lt;/p></description></item><item><title>Podman compiling from source</title><link>https://lstolcman.github.io/post/podman-compile/</link><pubDate>Wed, 18 Oct 2023 13:39:00 +0100</pubDate><guid>https://lstolcman.github.io/post/podman-compile/</guid><description>&lt;p>This post is a draft.&lt;/p>
+&lt;p>Podman newset version in couple of quick steps&lt;/p>
+&lt;p>As the title says, if you need newest version of podman, you have to build from source. However, you don&amp;rsquo;t have to build all the necessary 3rd party elements from source (such as go)&lt;/p>
+&lt;h1 id="10-installation-of-go">1.0 Installation of go&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>wget https://go.dev/dl/go1.21.3.linux-amd64.tar.gz
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>when follow installtion from&lt;/p>
+&lt;p>&lt;a href="https://go.dev/doc/install">https://go.dev/doc/install&lt;/a>&lt;/p>
+&lt;h1 id="20-conmon">2.0 conmon&lt;/h1>
+&lt;p>download, chmod +x, rename and copy to usr local bin&lt;/p></description></item></channel></rss>

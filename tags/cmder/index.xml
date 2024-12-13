@@ -1,5 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cmder on lstolcman Today-I-Learned</title><link>https://lstolcman.github.io/tags/cmder/</link><description>Recent content in Cmder on lstolcman Today-I-Learned</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 21 Sep 2021 21:39:59 +0200</lastBuildDate><atom:link href="https://lstolcman.github.io/tags/cmder/index.xml" rel="self" type="application/rss+xml"/><item><title>Initial dev config of cmder and git</title><link>https://lstolcman.github.io/post/initial-dev-config/</link><pubDate>Tue, 21 Sep 2021 21:39:59 +0200</pubDate><guid>https://lstolcman.github.io/post/initial-dev-config/</guid><description>Git A version control, which anybody should be familiar with (at least when one is a developer &amp;#x1f600;).
-The configuration is simple two steps - ssh keys generation, and .gitconfig
-generating ssh keys Covered in Cmder minimal section
-.gitconfig Basic config with aliases, additional tools&amp;hellip;.
-[core] editor = \&amp;#34;C:/tools/GitExtensions/GitExtensions.exe\&amp;#34; fileeditor # editor = vim autocrlf = true # commentChar = &amp;#34;;&amp;#34; # in case hash is not desired comment char in the commit message files [user] email = .</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cmder on lstolcman Today-I-Learned</title><link>https://lstolcman.github.io/tags/cmder/</link><description>Recent content in Cmder on lstolcman Today-I-Learned</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 21 Sep 2021 21:39:59 +0200</lastBuildDate><atom:link href="https://lstolcman.github.io/tags/cmder/index.xml" rel="self" type="application/rss+xml"/><item><title>Initial dev config of cmder and git</title><link>https://lstolcman.github.io/post/initial-dev-config/</link><pubDate>Tue, 21 Sep 2021 21:39:59 +0200</pubDate><guid>https://lstolcman.github.io/post/initial-dev-config/</guid><description>&lt;h1 id="git">Git&lt;/h1>
+&lt;p>A version control, which anybody should be familiar with (at least when one is a developer &amp;#x1f600;).&lt;/p>
+&lt;p>The configuration is simple two steps - ssh keys generation, and &lt;code>.gitconfig&lt;/code>&lt;/p>
+&lt;h2 id="generating-ssh-keys">generating ssh keys&lt;/h2>
+&lt;p>Covered in &lt;a href="#cmder-minimal">Cmder minimal&lt;/a> section&lt;/p>
+&lt;h2 id="gitconfig">&lt;code>.gitconfig&lt;/code>&lt;/h2>
+&lt;p>Basic config with &lt;a href="https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases">aliases&lt;/a>, &lt;a href="https://gitextensions.github.io/">additional tools&lt;/a>&amp;hellip;.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>core&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	editor &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">\&amp;#34;&lt;/span>C:/tools/GitExtensions/GitExtensions.exe&lt;span style="color:#ae81ff">\&amp;#34;&lt;/span> fileeditor
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e"># editor = vim&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	autocrlf &lt;span style="color:#f92672">=&lt;/span> true
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># commentChar = &amp;#34;;&amp;#34; # in case hash is not desired comment char in the commit message files&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>user&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	email &lt;span style="color:#f92672">=&lt;/span> ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	name &lt;span style="color:#f92672">=&lt;/span> ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>alias&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	co &lt;span style="color:#f92672">=&lt;/span> checkout
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	ci &lt;span style="color:#f92672">=&lt;/span> commit
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	st &lt;span style="color:#f92672">=&lt;/span> status
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	br &lt;span style="color:#f92672">=&lt;/span> branch
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>pull&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	rebase &lt;span style="color:#f92672">=&lt;/span> false
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>fetch&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	prune &lt;span style="color:#f92672">=&lt;/span> false
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>rebase&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	autoStash &lt;span style="color:#f92672">=&lt;/span> false
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="gitattributes">&lt;code>.gitattributes&lt;/code>&lt;/h2>
+&lt;p>Normalizes end-of-line covnetion. Needed to be added at the init of a repository.&lt;/p></description></item></channel></rss>

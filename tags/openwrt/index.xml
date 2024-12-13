@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Openwrt on lstolcman Today-I-Learned</title><link>https://lstolcman.github.io/tags/openwrt/</link><description>Recent content in Openwrt on lstolcman Today-I-Learned</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 13 Dec 2024 22:44:00 +0200</lastBuildDate><atom:link href="https://lstolcman.github.io/tags/openwrt/index.xml" rel="self" type="application/rss+xml"/><item><title>IPv6 tunnel in OpenWRT</title><link>https://lstolcman.github.io/post/openwrt-ipv6-6in4/</link><pubDate>Fri, 13 Dec 2024 22:44:00 +0200</pubDate><guid>https://lstolcman.github.io/post/openwrt-ipv6-6in4/</guid><description>&lt;p>During the install of new internet provider, I asked for ONT instead of a router.
+The reason was, I wanted to have a control of a network stack, and possibly - to install
+OpenWRT on my own router.&lt;/p>
+&lt;p>This happened to be possible (thanks Netia!), and besides that, they provide public ipv4 as well
+(dynamic, but stays persistent many days if connected).&lt;/p>
+&lt;p>The next steps were to experiment - test IPv6 network and possibilities.
+Installation of a tunnel was half-straightforward - hurricane electric tunnel is/was not used
+(they not allow registering account @protonmail address). In the end, I have to reconsider HE tunnel.&lt;/p></description></item></channel></rss>

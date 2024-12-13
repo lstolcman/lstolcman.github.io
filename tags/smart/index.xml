@@ -1,4 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Smart on lstolcman Today-I-Learned</title><link>https://lstolcman.github.io/tags/smart/</link><description>Recent content in Smart on lstolcman Today-I-Learned</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 27 Feb 2024 20:22:00 +0100</lastBuildDate><atom:link href="https://lstolcman.github.io/tags/smart/index.xml" rel="self" type="application/rss+xml"/><item><title>CrystalDiskInfo - interpretation of values</title><link>https://lstolcman.github.io/post/crystaldiskinfo-interpretation/crystaldiskinfo-interpretation/</link><pubDate>Tue, 27 Feb 2024 20:22:00 +0100</pubDate><guid>https://lstolcman.github.io/post/crystaldiskinfo-interpretation/crystaldiskinfo-interpretation/</guid><description>What are the interpretation of CrystalDiskInfo parameters? How to understand the health of a hard disk via reading SMART?
-RAW value (hex/dec)
-From the result of this attribute parameter that we learn about the current state of the disk. It shows the raw result, for example, for attribute 5 it is the number of reallocated sectors.
-important note: change default hex to decimal values: Function -&amp;gt; Advanced Feature -&amp;gt; Raw values -&amp;gt; 10 [DEC] Threshold</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Smart on lstolcman Today-I-Learned</title><link>https://lstolcman.github.io/tags/smart/</link><description>Recent content in Smart on lstolcman Today-I-Learned</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Tue, 27 Feb 2024 20:22:00 +0100</lastBuildDate><atom:link href="https://lstolcman.github.io/tags/smart/index.xml" rel="self" type="application/rss+xml"/><item><title>CrystalDiskInfo - interpretation of values</title><link>https://lstolcman.github.io/post/crystaldiskinfo-interpretation/crystaldiskinfo-interpretation/</link><pubDate>Tue, 27 Feb 2024 20:22:00 +0100</pubDate><guid>https://lstolcman.github.io/post/crystaldiskinfo-interpretation/crystaldiskinfo-interpretation/</guid><description>&lt;p>What are the interpretation of CrystalDiskInfo parameters? How to understand the health of a hard disk via reading SMART?&lt;/p>
+&lt;p>&lt;img src="https://lstolcman.github.io/images/crystaldiskinfo.png" alt="CrystalDiskInfo parameters example">&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>RAW value (hex/dec)&lt;/p>
+&lt;p>From the result of this attribute parameter that we learn about the current state of the disk.
+It shows the raw result, for example, for attribute 5 it is the number of reallocated sectors.&lt;/p>
+&lt;ul>
+&lt;li>important note: change default hex to decimal values: &lt;code>Function -&amp;gt; Advanced Feature -&amp;gt; Raw values -&amp;gt; 10 [DEC]&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Threshold&lt;/p></description></item></channel></rss>

@@ -1,37 +1,172 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>lstolcman Today-I-Learned</title><link>https://lstolcman.github.io/</link><description>Recent content on lstolcman Today-I-Learned</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 27 Feb 2024 20:22:00 +0100</lastBuildDate><atom:link href="https://lstolcman.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>CrystalDiskInfo - interpretation of values</title><link>https://lstolcman.github.io/post/crystaldiskinfo-interpretation/crystaldiskinfo-interpretation/</link><pubDate>Tue, 27 Feb 2024 20:22:00 +0100</pubDate><guid>https://lstolcman.github.io/post/crystaldiskinfo-interpretation/crystaldiskinfo-interpretation/</guid><description>What are the interpretation of CrystalDiskInfo parameters? How to understand the health of a hard disk via reading SMART?
-RAW value (hex/dec)
-From the result of this attribute parameter that we learn about the current state of the disk. It shows the raw result, for example, for attribute 5 it is the number of reallocated sectors.
-important note: change default hex to decimal values: Function -&amp;gt; Advanced Feature -&amp;gt; Raw values -&amp;gt; 10 [DEC] Threshold</description></item><item><title>Basics of UFW - uncomplicated firewall</title><link>https://lstolcman.github.io/post/ufw-basics/ufw-basics/</link><pubDate>Wed, 21 Feb 2024 22:14:00 +0100</pubDate><guid>https://lstolcman.github.io/post/ufw-basics/ufw-basics/</guid><description>Configuring ufw for different rules is not difficult at all. However, I will provide couple of commands which are useful for the home server.
-Enabling ufw: sudo ufw enable Disabling ufw: sudo ufw disable Listing available apps: sudo ufw app list Allowing ssh: sudo ufw allow OpenSSH or sudo ufw allow ssh Allow Syncthing gui, but only to local network: sudo ufw allow from 192.168.0.0/24 to any app syncthing-gui - for the ipv4 connection from address 192.</description></item><item><title>Cache'em all! - speeding up apt and other downloads in (not only) docker containers (2024 version)</title><link>https://lstolcman.github.io/post/cache-em-all-speed-up-apt-pip-docker/</link><pubDate>Mon, 12 Feb 2024 23:07:00 +0200</pubDate><guid>https://lstolcman.github.io/post/cache-em-all-speed-up-apt-pip-docker/</guid><description>When working on couple of DockerfilesContainerfiles, I was having a situation when I had to clear dockerpodman cache (for various reasons), and the indispensable step is to update or download certain packages from apt. It is often long process, and I was thinking whether there&amp;rsquo;s a way to speed it up or optimize.
-The results of the investigation are below:
-Caching apt get downloads There are two options of caching:</description></item><item><title>How to start systemd user services at boot</title><link>https://lstolcman.github.io/post/start-systemd-user-at-boot/</link><pubDate>Mon, 12 Feb 2024 00:10:00 +0100</pubDate><guid>https://lstolcman.github.io/post/start-systemd-user-at-boot/</guid><description>Covers: ubuntu 22.04
-If you separate systemd services with different accounts, you may encounter the problem, that a service is not restarted at boot time, but once you login into the account. The user (not system-wide) services are ran that way.
-To change the behavior (i.e. run the user services at boot time, regardless login), you should not put it in home folder, but in /etc/systemd/system/,
-Otherwise, you can keep the services in $HOME and fake users logging in via:</description></item><item><title>Multiple WSL environments</title><link>https://lstolcman.github.io/post/multiple-wsl-envs/</link><pubDate>Sun, 11 Feb 2024 19:55:00 +0100</pubDate><guid>https://lstolcman.github.io/post/multiple-wsl-envs/</guid><description>Not so easy way to figure out, but there is a way to have multiple wsl instances.
-Assuming you do not have any distributions installed (check via wsl --list -v), install the clean one:
-wsl --install Ubuntu-22.04 Enter the instance and do the necessary configuration (it&amp;rsquo;ll be the default for your instances)
-Then, export the instance
-wsl --export Ubuntu-22.04 c:\dev\wsl\wsl-clean-instance-ubuntu2204 If you like to create a new instance, type: wsl --import myinstance c:\dev\wsl\instances\myinstance c:\dev\wsl\wsl-clean-instance-ubuntu2204 and enter into instance:</description></item><item><title>podman and docker-compose in Ubuntu 22.04.3 (WSL2)</title><link>https://lstolcman.github.io/post/podman-compose-wsl2-ubuntu-22-04/</link><pubDate>Thu, 11 Jan 2024 00:07:00 +0200</pubDate><guid>https://lstolcman.github.io/post/podman-compose-wsl2-ubuntu-22-04/</guid><description>Ubuntu reports fairly old version od podman in its default apt registry.
-Here I will present how to install podman 4.6.2 from separate apt. Afterwards, we&amp;rsquo;ll also configure podman socket, install docker-compose and run example scripts.
-System I am using wsl2 with ubuntu 22 lts:
-➜ lsb_release -a No LSB modules are available. Distributor ID: Ubuntu Description: Ubuntu 22.04.3 LTS Release: 22.04 Codename: jammy Adding apt repository Stock ubuntu does have podman but in ancient version 3.</description></item><item><title>Configuring raspberry pi 1</title><link>https://lstolcman.github.io/post/configure-rpi1/</link><pubDate>Thu, 19 Oct 2023 07:25:00 +0100</pubDate><guid>https://lstolcman.github.io/post/configure-rpi1/</guid><description>This is a draft notes of my journey to set-up raspberry pi 1 (the oldest one, on arm v6 procesor), and some notes about syncthing
-Execute parted command to start parted Suppose, /dev/sda is the device on which to remove the partition. Use the parted commnad with the /dev/sda device as shown below: parted /dev/sda View partition table to determine the minor number of the partition to remove: print Remove the partition with the command rm.</description></item><item><title>Podman compiling from source</title><link>https://lstolcman.github.io/post/podman-compile/</link><pubDate>Wed, 18 Oct 2023 13:39:00 +0100</pubDate><guid>https://lstolcman.github.io/post/podman-compile/</guid><description>This post is a draft.
-Podman newset version in couple of quick steps
-As the title says, if you need newest version of podman, you have to build from source. However, you don&amp;rsquo;t have to build all the necessary 3rd party elements from source (such as go)
-1.0 Installation of go wget https://go.dev/dl/go1.21.3.linux-amd64.tar.gz when follow installtion from
-https://go.dev/doc/install
-2.0 conmon download, chmod +x, rename and copy to usr local bin</description></item><item><title>POSTing multiline JSONs by curl</title><link>https://lstolcman.github.io/post/post-json-curl/</link><pubDate>Thu, 03 Mar 2022 19:11:00 +0200</pubDate><guid>https://lstolcman.github.io/post/post-json-curl/</guid><description>Sending multiline POST requests by curl (in console):
-curl -X POST 127.0.0.1:3000/api/v1/something/ -H &amp;#34;Content-Type: application/json; charset=utf-8&amp;#34; --data-binary @- &amp;lt;&amp;lt; BODY { &amp;#34;somefield1&amp;#34;: &amp;#34;data1&amp;#34;, &amp;#34;somefield2&amp;#34;: &amp;#34;data2&amp;#34; } BODY PS There was a nice GUI tool called Postman, unfortunately it became slow and bloated. Alternative: Insomnia. Version 2.5.0 is fine.</description></item><item><title>Configuring mypy</title><link>https://lstolcman.github.io/post/configuring-mypy/</link><pubDate>Fri, 18 Feb 2022 20:11:00 +0200</pubDate><guid>https://lstolcman.github.io/post/configuring-mypy/</guid><description>Mypy does not have strict settings by default. It has to have a config, to do a proper type checking:
-Good:
-Professional-grade mypy configuration - Wolt How to start type-checking a large Python codebase Other:
-mypy: how to use it in my project? Europython 2018: Getting Started with Mypy and Type Checking</description></item><item><title>Installation speed of multiple python packages using pip</title><link>https://lstolcman.github.io/post/pip-multiple-packages/</link><pubDate>Tue, 15 Feb 2022 12:11:00 +0200</pubDate><guid>https://lstolcman.github.io/post/pip-multiple-packages/</guid><description>What&amp;rsquo;s faster - multiple pip install statements, or one with a list of wanted libraries? Lets do a quick check:
-➜ test cat 1.sh pip install &amp;#34;pytest&amp;gt;=7.0,&amp;lt;7.1&amp;#34; pip install &amp;#34;pytest-mock&amp;gt;=3.7,&amp;lt;3.8&amp;#34; pip install &amp;#34;pytest-subtests&amp;gt;=0.6,&amp;lt;0.7&amp;#34; pip install &amp;#34;pytest-cov&amp;gt;=3.0,&amp;lt;3.1&amp;#34; ➜ test cat 2.sh pip install &amp;#34;pytest&amp;gt;=7.0,&amp;lt;7.1&amp;#34; &amp;#34;pytest-mock&amp;gt;=3.7,&amp;lt;3.8&amp;#34; &amp;#34;pytest-subtests&amp;gt;=0.6,&amp;lt;0.7&amp;#34; &amp;#34;pytest-cov&amp;gt;=3.0,&amp;lt;3.1&amp;#34; Results:
-./1.sh 4.91s user 0.53s system 72% cpu 7.500 total ./1.sh 4.98s user 0.37s system 75% cpu 7.076 total ./1.sh 5.06s user 0.49s system 76% cpu 7.</description></item><item><title>Debugging external python library in VS Code</title><link>https://lstolcman.github.io/post/debugging-python-lib-debugpy/</link><pubDate>Fri, 04 Feb 2022 14:24:00 +0200</pubDate><guid>https://lstolcman.github.io/post/debugging-python-lib-debugpy/</guid><description>Sometimes we would like to know how an external library works, or the documentation is not sufficient to understand its behavior. &amp;ldquo;The code should be self-explanatory&amp;rdquo; - let&amp;rsquo;s take advantage of it.
-The case is as following - I wanted to use pre-commit and one of its features is excluding certain files or folders from linting. I would like to make use of it - specify a list of folders to exclude in nice, multi-line human-readable format.</description></item><item><title>Adding/editing text to PDF files</title><link>https://lstolcman.github.io/post/add-text-to-pdf/</link><pubDate>Sun, 23 Jan 2022 18:43:00 +0100</pubDate><guid>https://lstolcman.github.io/post/add-text-to-pdf/</guid><description>I needed to add text to some pdf documents and later sign it with qualified electronic signature.
-Freeware Foxit PDF Reader can be used to add/edit a text in pdf. I used version 11.1 from portableapps.
-To add text, search for option &amp;ldquo;Add Text&amp;rdquo;. Do not use &amp;ldquo;Typewriter&amp;rdquo; option, as it adds text as a &amp;ldquo;comment&amp;rdquo;, which can be edited afterwards (even if signed by certificate).</description></item><item><title>Initial dev config of cmder and git</title><link>https://lstolcman.github.io/post/initial-dev-config/</link><pubDate>Tue, 21 Sep 2021 21:39:59 +0200</pubDate><guid>https://lstolcman.github.io/post/initial-dev-config/</guid><description>Git A version control, which anybody should be familiar with (at least when one is a developer &amp;#x1f600;).
-The configuration is simple two steps - ssh keys generation, and .gitconfig
-generating ssh keys Covered in Cmder minimal section
-.gitconfig Basic config with aliases, additional tools&amp;hellip;.
-[core] editor = \&amp;#34;C:/tools/GitExtensions/GitExtensions.exe\&amp;#34; fileeditor # editor = vim autocrlf = true # commentChar = &amp;#34;;&amp;#34; # in case hash is not desired comment char in the commit message files [user] email = .</description></item><item><title>Wireguard config for private LAN and/or VPN</title><link>https://lstolcman.github.io/post/wireguard/</link><pubDate>Tue, 29 Jun 2021 00:38:00 +0200</pubDate><guid>https://lstolcman.github.io/post/wireguard/</guid><description>So I wanted to connect from my laptop to my desktop computer, both which were in separate networks (desktop was in my home network, laptop was on mobile data). Of course, it turned out to be impossible the easy way due to CGNATs everywhere (actually both networks were CGNATed).
-The solution is VPN. After checking the available options, I decided to set up my own. My thought was - why pay 5 EUR for something, when I can have a VPS for less, and use it also for other purposes, not only VPN (think e.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>lstolcman Today-I-Learned</title><link>https://lstolcman.github.io/</link><description>Recent content on lstolcman Today-I-Learned</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 13 Dec 2024 22:44:00 +0200</lastBuildDate><atom:link href="https://lstolcman.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>IPv6 tunnel in OpenWRT</title><link>https://lstolcman.github.io/post/openwrt-ipv6-6in4/</link><pubDate>Fri, 13 Dec 2024 22:44:00 +0200</pubDate><guid>https://lstolcman.github.io/post/openwrt-ipv6-6in4/</guid><description>&lt;p>During the install of new internet provider, I asked for ONT instead of a router.
+The reason was, I wanted to have a control of a network stack, and possibly - to install
+OpenWRT on my own router.&lt;/p>
+&lt;p>This happened to be possible (thanks Netia!), and besides that, they provide public ipv4 as well
+(dynamic, but stays persistent many days if connected).&lt;/p>
+&lt;p>The next steps were to experiment - test IPv6 network and possibilities.
+Installation of a tunnel was half-straightforward - hurricane electric tunnel is/was not used
+(they not allow registering account @protonmail address). In the end, I have to reconsider HE tunnel.&lt;/p></description></item><item><title>CrystalDiskInfo - interpretation of values</title><link>https://lstolcman.github.io/post/crystaldiskinfo-interpretation/crystaldiskinfo-interpretation/</link><pubDate>Tue, 27 Feb 2024 20:22:00 +0100</pubDate><guid>https://lstolcman.github.io/post/crystaldiskinfo-interpretation/crystaldiskinfo-interpretation/</guid><description>&lt;p>What are the interpretation of CrystalDiskInfo parameters? How to understand the health of a hard disk via reading SMART?&lt;/p>
+&lt;p>&lt;img src="https://lstolcman.github.io/images/crystaldiskinfo.png" alt="CrystalDiskInfo parameters example">&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>RAW value (hex/dec)&lt;/p>
+&lt;p>From the result of this attribute parameter that we learn about the current state of the disk.
+It shows the raw result, for example, for attribute 5 it is the number of reallocated sectors.&lt;/p>
+&lt;ul>
+&lt;li>important note: change default hex to decimal values: &lt;code>Function -&amp;gt; Advanced Feature -&amp;gt; Raw values -&amp;gt; 10 [DEC]&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Threshold&lt;/p></description></item><item><title>Basics of UFW - uncomplicated firewall</title><link>https://lstolcman.github.io/post/ufw-basics/ufw-basics/</link><pubDate>Wed, 21 Feb 2024 22:14:00 +0100</pubDate><guid>https://lstolcman.github.io/post/ufw-basics/ufw-basics/</guid><description>&lt;p>Configuring ufw for different rules is not difficult at all. However, I will provide couple of commands
+which are useful for the home server.&lt;/p>
+&lt;ul>
+&lt;li>Enabling ufw: &lt;code>sudo ufw enable&lt;/code>&lt;/li>
+&lt;li>Disabling ufw: &lt;code>sudo ufw disable&lt;/code>&lt;/li>
+&lt;li>Listing available apps: &lt;code>sudo ufw app list&lt;/code>&lt;/li>
+&lt;li>Allowing ssh: &lt;code>sudo ufw allow OpenSSH&lt;/code> or &lt;code>sudo ufw allow ssh&lt;/code>&lt;/li>
+&lt;li>Allow Syncthing gui, but only to local network:
+&lt;ul>
+&lt;li>&lt;code>sudo ufw allow from 192.168.0.0/24 to any app syncthing-gui&lt;/code> - for the ipv4 connection from address 192.168.0.1-254 (local network), to app &lt;code>syncthing-gui&lt;/code> (app name from the app list)&lt;/li>
+&lt;li>&lt;code>sudo ufw allow from fe80::/10 to any app syncthing-gui&lt;/code> - for ipv6 connection from fe::/10 (&lt;a href="https://en.wikipedia.org/wiki/Link-local_address#IPv6">link-local address&lt;/a>), to app &lt;code>syncthing-gui&lt;/code> (app name from the app list).
+The ipv6 address rule is useful because of the &lt;code>.local&lt;/code> address resolving, which maks to ipv6 address.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;p>Useful digital ocean article about ufw commands: &lt;a href="https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands">UFW Essentials: Common Firewall Rules and Commands&lt;/a>&lt;/p></description></item><item><title>Cache'em all! - speeding up apt and other downloads in (not only) docker containers (2024 version)</title><link>https://lstolcman.github.io/post/cache-em-all-speed-up-apt-pip-docker/</link><pubDate>Mon, 12 Feb 2024 23:07:00 +0200</pubDate><guid>https://lstolcman.github.io/post/cache-em-all-speed-up-apt-pip-docker/</guid><description>&lt;p>When working on couple of &lt;del>Dockerfiles&lt;/del>Containerfiles, I was having a situation when I had to clear
+&lt;del>docker&lt;/del>podman cache (for various reasons), and the indispensable step is to update or download certain
+packages from apt. It is often long process, and I was thinking whether there&amp;rsquo;s a way to speed it up or
+optimize.&lt;/p>
+&lt;p>The results of the investigation are below:&lt;/p>
+&lt;h1 id="caching-apt-get-downloads">Caching apt get downloads&lt;/h1>
+&lt;p>There are two options of caching:&lt;/p></description></item><item><title>How to start systemd user services at boot</title><link>https://lstolcman.github.io/post/start-systemd-user-at-boot/</link><pubDate>Mon, 12 Feb 2024 00:10:00 +0100</pubDate><guid>https://lstolcman.github.io/post/start-systemd-user-at-boot/</guid><description>&lt;p>Covers: ubuntu 22.04&lt;/p>
+&lt;p>If you separate systemd services with different accounts, you may encounter the problem, that a service is not restarted at boot time, but
+once you login into the account. The user (not system-wide) services are ran that way.&lt;/p>
+&lt;p>To change the behavior (i.e. run the user services at boot time, regardless login), you should not put it in home folder, but in &lt;code>/etc/systemd/system/&lt;/code>,&lt;/p>
+&lt;p>Otherwise, you can keep the services in &lt;code>$HOME&lt;/code> and fake users logging in via:&lt;/p></description></item><item><title>Multiple WSL environments</title><link>https://lstolcman.github.io/post/multiple-wsl-envs/</link><pubDate>Sun, 11 Feb 2024 19:55:00 +0100</pubDate><guid>https://lstolcman.github.io/post/multiple-wsl-envs/</guid><description>&lt;p>Not so easy way to figure out, but there is a way to have multiple wsl instances.&lt;/p>
+&lt;p>Assuming you do not have any distributions installed (check via &lt;code>wsl --list -v&lt;/code>), install the clean one:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>wsl --install Ubuntu-22.04
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol>
+&lt;li>
+&lt;p>Enter the instance and do the necessary configuration (it&amp;rsquo;ll be the default for your instances)&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Then, export the instance&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;pre tabindex="0">&lt;code class="language-ssh" data-lang="ssh">wsl --export Ubuntu-22.04 c:\dev\wsl\wsl-clean-instance-ubuntu2204
+&lt;/code>&lt;/pre>&lt;ol start="3">
+&lt;li>If you like to create a new instance, type:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>wsl --import myinstance c:&lt;span style="color:#ae81ff">\d&lt;/span>ev&lt;span style="color:#ae81ff">\w&lt;/span>sl&lt;span style="color:#ae81ff">\i&lt;/span>nstances&lt;span style="color:#ae81ff">\m&lt;/span>yinstance c:&lt;span style="color:#ae81ff">\d&lt;/span>ev&lt;span style="color:#ae81ff">\w&lt;/span>sl&lt;span style="color:#ae81ff">\w&lt;/span>sl-clean-instance-ubuntu2204
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and enter into instance:&lt;/p></description></item><item><title>podman and docker-compose in Ubuntu 22.04.3 (WSL2)</title><link>https://lstolcman.github.io/post/podman-compose-wsl2-ubuntu-22-04/</link><pubDate>Thu, 11 Jan 2024 00:07:00 +0200</pubDate><guid>https://lstolcman.github.io/post/podman-compose-wsl2-ubuntu-22-04/</guid><description>&lt;p>Ubuntu reports fairly old version od podman in its default apt registry.&lt;/p>
+&lt;p>Here I will present how to install podman 4.6.2 from separate apt. Afterwards, we&amp;rsquo;ll also configure podman socket, install docker-compose and run example scripts.&lt;/p>
+&lt;h1 id="system">System&lt;/h1>
+&lt;p>I am using wsl2 with ubuntu 22 lts:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>➜ lsb_release -a
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>No LSB modules are available.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Distributor ID: Ubuntu
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Description: Ubuntu 22.04.3 LTS
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Release: 22.04
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Codename: jammy
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h1 id="adding-apt-repository">Adding apt repository&lt;/h1>
+&lt;p>Stock ubuntu does have podman but in ancient version 3.x something. To install newer version using apt, we need to add a kubic repository, &lt;a href="https://podman.io/docs/installation#ubuntu">as suggested in podman readme&lt;/a>.&lt;/p></description></item><item><title>Configuring raspberry pi 1</title><link>https://lstolcman.github.io/post/configure-rpi1/</link><pubDate>Thu, 19 Oct 2023 07:25:00 +0100</pubDate><guid>https://lstolcman.github.io/post/configure-rpi1/</guid><description>&lt;p>This is a draft notes of my journey to set-up raspberry pi 1 (the oldest one, on arm v6 procesor), and some notes about syncthing&lt;/p>
+&lt;ol>
+&lt;li>Execute parted command to start&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>parted
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="2">
+&lt;li>Suppose, /dev/sda is the device on which to remove the partition. Use the parted commnad with the /dev/sda device as shown below:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>parted /dev/sda
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="3">
+&lt;li>View partition table to determine the minor number of the partition to remove:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>print
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;ol start="4">
+&lt;li>Remove the partition with the command rm. For example, to remove the partition with minor number 2:&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>rm &lt;span style="color:#ae81ff">2&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>creating partition&lt;/p></description></item><item><title>Podman compiling from source</title><link>https://lstolcman.github.io/post/podman-compile/</link><pubDate>Wed, 18 Oct 2023 13:39:00 +0100</pubDate><guid>https://lstolcman.github.io/post/podman-compile/</guid><description>&lt;p>This post is a draft.&lt;/p>
+&lt;p>Podman newset version in couple of quick steps&lt;/p>
+&lt;p>As the title says, if you need newest version of podman, you have to build from source. However, you don&amp;rsquo;t have to build all the necessary 3rd party elements from source (such as go)&lt;/p>
+&lt;h1 id="10-installation-of-go">1.0 Installation of go&lt;/h1>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>wget https://go.dev/dl/go1.21.3.linux-amd64.tar.gz
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>when follow installtion from&lt;/p>
+&lt;p>&lt;a href="https://go.dev/doc/install">https://go.dev/doc/install&lt;/a>&lt;/p>
+&lt;h1 id="20-conmon">2.0 conmon&lt;/h1>
+&lt;p>download, chmod +x, rename and copy to usr local bin&lt;/p></description></item><item><title>POSTing multiline JSONs by curl</title><link>https://lstolcman.github.io/post/post-json-curl/</link><pubDate>Thu, 03 Mar 2022 19:11:00 +0200</pubDate><guid>https://lstolcman.github.io/post/post-json-curl/</guid><description>&lt;p>Sending multiline POST requests by curl (in console):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>curl -X POST 127.0.0.1:3000/api/v1/something/ -H &lt;span style="color:#e6db74">&amp;#34;Content-Type: application/json; charset=utf-8&amp;#34;&lt;/span> --data-binary @- &lt;span style="color:#e6db74">&amp;lt;&amp;lt; BODY
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">{
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;somefield1&amp;#34;: &amp;#34;data1&amp;#34;,
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74"> &amp;#34;somefield2&amp;#34;: &amp;#34;data2&amp;#34;
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">}
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">BODY&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>PS There was a nice GUI tool called Postman, unfortunately it became slow and bloated. Alternative: &lt;a href="https://github.com/Kong/insomnia">Insomnia&lt;/a>. Version 2.5.0 is fine.&lt;/p></description></item><item><title>Configuring mypy</title><link>https://lstolcman.github.io/post/configuring-mypy/</link><pubDate>Fri, 18 Feb 2022 20:11:00 +0200</pubDate><guid>https://lstolcman.github.io/post/configuring-mypy/</guid><description>&lt;p>Mypy does not have strict settings by default. It has to have a config, to do a proper type checking:&lt;/p>
+&lt;p>Good:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://blog.wolt.com/engineering/2021/09/30/professional-grade-mypy-configuration/">Professional-grade mypy configuration - Wolt&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://quantlane.com/blog/type-checking-large-codebase/">How to start type-checking a large Python codebase&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Other:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://breadcrumbscollector.tech/mypy-how-to-use-it-in-my-project/">mypy: how to use it in my project?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://av.tib.eu/media/44935">Europython 2018: Getting Started with Mypy and Type Checking&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Installation speed of multiple python packages using pip</title><link>https://lstolcman.github.io/post/pip-multiple-packages/</link><pubDate>Tue, 15 Feb 2022 12:11:00 +0200</pubDate><guid>https://lstolcman.github.io/post/pip-multiple-packages/</guid><description>&lt;p>What&amp;rsquo;s faster - multiple &lt;code>pip install&lt;/code> statements, or one with a list of wanted libraries? Lets do a quick check:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>➜ test cat 1.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pip install &lt;span style="color:#e6db74">&amp;#34;pytest&amp;gt;=7.0,&amp;lt;7.1&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pip install &lt;span style="color:#e6db74">&amp;#34;pytest-mock&amp;gt;=3.7,&amp;lt;3.8&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pip install &lt;span style="color:#e6db74">&amp;#34;pytest-subtests&amp;gt;=0.6,&amp;lt;0.7&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pip install &lt;span style="color:#e6db74">&amp;#34;pytest-cov&amp;gt;=3.0,&amp;lt;3.1&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>➜ test cat 2.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pip install &lt;span style="color:#e6db74">&amp;#34;pytest&amp;gt;=7.0,&amp;lt;7.1&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;pytest-mock&amp;gt;=3.7,&amp;lt;3.8&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;pytest-subtests&amp;gt;=0.6,&amp;lt;0.7&amp;#34;&lt;/span> &lt;span style="color:#e6db74">&amp;#34;pytest-cov&amp;gt;=3.0,&amp;lt;3.1&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Results:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>./1.sh 4.91s user 0.53s system 72% cpu 7.500 total
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./1.sh 4.98s user 0.37s system 75% cpu 7.076 total
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./1.sh 5.06s user 0.49s system 76% cpu 7.278 total
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./2.sh 2.56s user 0.24s system 71% cpu 3.903 total
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./2.sh 3.36s user 0.23s system 79% cpu 4.519 total
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./2.sh 2.64s user 0.27s system 75% cpu 3.872 total
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Results were generated by hand as following:&lt;/p></description></item><item><title>Debugging external python library in VS Code</title><link>https://lstolcman.github.io/post/debugging-python-lib-debugpy/</link><pubDate>Fri, 04 Feb 2022 14:24:00 +0200</pubDate><guid>https://lstolcman.github.io/post/debugging-python-lib-debugpy/</guid><description>&lt;p>Sometimes we would like to know how an external library works, or the documentation is not sufficient to understand its
+behavior. &amp;ldquo;The code should be self-explanatory&amp;rdquo; - let&amp;rsquo;s take advantage of it.&lt;/p>
+&lt;p>The case is as following - I wanted to use &lt;a href="https://pre-commit.com/">pre-commit&lt;/a> and one of its features is excluding
+certain files or folders from linting. I would like to make use of it - specify a list of folders to exclude in nice,
+multi-line human-readable format. Unfortunately, the documentation was vague about how it should be formatted exactly.
+At this point, my experiments failed. How could I know the proper format?&lt;/p></description></item><item><title>Adding/editing text to PDF files</title><link>https://lstolcman.github.io/post/add-text-to-pdf/</link><pubDate>Sun, 23 Jan 2022 18:43:00 +0100</pubDate><guid>https://lstolcman.github.io/post/add-text-to-pdf/</guid><description>&lt;p>I needed to add text to some pdf documents and later sign it with &lt;a href="https://en.wikipedia.org/wiki/Qualified_electronic_signature">qualified electronic signature&lt;/a>.&lt;/p>
+&lt;p>Freeware Foxit PDF Reader can be used to add/edit a text in pdf. I used version 11.1 from portableapps.&lt;/p>
+&lt;p>To add text, search for option &amp;ldquo;Add Text&amp;rdquo;. &lt;em>Do not&lt;/em> use &amp;ldquo;Typewriter&amp;rdquo; option, as it adds text as a &amp;ldquo;comment&amp;rdquo;, which can be edited afterwards (even if signed by certificate).&lt;/p>
+&lt;p>&lt;img src="https://lstolcman.github.io/images/foxit-add-text.png" alt="Foxit PDF Reader - Add Text">&lt;/p></description></item><item><title>Initial dev config of cmder and git</title><link>https://lstolcman.github.io/post/initial-dev-config/</link><pubDate>Tue, 21 Sep 2021 21:39:59 +0200</pubDate><guid>https://lstolcman.github.io/post/initial-dev-config/</guid><description>&lt;h1 id="git">Git&lt;/h1>
+&lt;p>A version control, which anybody should be familiar with (at least when one is a developer &amp;#x1f600;).&lt;/p>
+&lt;p>The configuration is simple two steps - ssh keys generation, and &lt;code>.gitconfig&lt;/code>&lt;/p>
+&lt;h2 id="generating-ssh-keys">generating ssh keys&lt;/h2>
+&lt;p>Covered in &lt;a href="#cmder-minimal">Cmder minimal&lt;/a> section&lt;/p>
+&lt;h2 id="gitconfig">&lt;code>.gitconfig&lt;/code>&lt;/h2>
+&lt;p>Basic config with &lt;a href="https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases">aliases&lt;/a>, &lt;a href="https://gitextensions.github.io/">additional tools&lt;/a>&amp;hellip;.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sh" data-lang="sh">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>core&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	editor &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">\&amp;#34;&lt;/span>C:/tools/GitExtensions/GitExtensions.exe&lt;span style="color:#ae81ff">\&amp;#34;&lt;/span> fileeditor
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	&lt;span style="color:#75715e"># editor = vim&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	autocrlf &lt;span style="color:#f92672">=&lt;/span> true
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e"># commentChar = &amp;#34;;&amp;#34; # in case hash is not desired comment char in the commit message files&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>user&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	email &lt;span style="color:#f92672">=&lt;/span> ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	name &lt;span style="color:#f92672">=&lt;/span> ...
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>alias&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	co &lt;span style="color:#f92672">=&lt;/span> checkout
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	ci &lt;span style="color:#f92672">=&lt;/span> commit
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	st &lt;span style="color:#f92672">=&lt;/span> status
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	br &lt;span style="color:#f92672">=&lt;/span> branch
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>pull&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	rebase &lt;span style="color:#f92672">=&lt;/span> false
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>fetch&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	prune &lt;span style="color:#f92672">=&lt;/span> false
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">[&lt;/span>rebase&lt;span style="color:#f92672">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>	autoStash &lt;span style="color:#f92672">=&lt;/span> false
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="gitattributes">&lt;code>.gitattributes&lt;/code>&lt;/h2>
+&lt;p>Normalizes end-of-line covnetion. Needed to be added at the init of a repository.&lt;/p></description></item><item><title>Wireguard config for private LAN and/or VPN</title><link>https://lstolcman.github.io/post/wireguard/</link><pubDate>Tue, 29 Jun 2021 00:38:00 +0200</pubDate><guid>https://lstolcman.github.io/post/wireguard/</guid><description>&lt;p>So I wanted to connect from my laptop to my desktop computer, both which were in separate networks
+(desktop was in my home network, laptop was on mobile data).
+Of course, it turned out to be impossible the easy way due to CGNATs everywhere (actually both networks were CGNATed).&lt;/p>
+&lt;p>The solution is VPN. After checking the available options, I decided to set up my own.
+My thought was - why pay 5 EUR for something, when I can have a VPS for less, and use it
+also for other purposes, not only VPN (think e.g. docker).&lt;/p></description></item></channel></rss>

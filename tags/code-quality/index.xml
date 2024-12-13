@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Code-Quality on lstolcman Today-I-Learned</title><link>https://lstolcman.github.io/tags/code-quality/</link><description>Recent content in Code-Quality on lstolcman Today-I-Learned</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 18 Feb 2022 20:11:00 +0200</lastBuildDate><atom:link href="https://lstolcman.github.io/tags/code-quality/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuring mypy</title><link>https://lstolcman.github.io/post/configuring-mypy/</link><pubDate>Fri, 18 Feb 2022 20:11:00 +0200</pubDate><guid>https://lstolcman.github.io/post/configuring-mypy/</guid><description>Mypy does not have strict settings by default. It has to have a config, to do a proper type checking:
-Good:
-Professional-grade mypy configuration - Wolt How to start type-checking a large Python codebase Other:
-mypy: how to use it in my project? Europython 2018: Getting Started with Mypy and Type Checking</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Code-Quality on lstolcman Today-I-Learned</title><link>https://lstolcman.github.io/tags/code-quality/</link><description>Recent content in Code-Quality on lstolcman Today-I-Learned</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 18 Feb 2022 20:11:00 +0200</lastBuildDate><atom:link href="https://lstolcman.github.io/tags/code-quality/index.xml" rel="self" type="application/rss+xml"/><item><title>Configuring mypy</title><link>https://lstolcman.github.io/post/configuring-mypy/</link><pubDate>Fri, 18 Feb 2022 20:11:00 +0200</pubDate><guid>https://lstolcman.github.io/post/configuring-mypy/</guid><description>&lt;p>Mypy does not have strict settings by default. It has to have a config, to do a proper type checking:&lt;/p>
+&lt;p>Good:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://blog.wolt.com/engineering/2021/09/30/professional-grade-mypy-configuration/">Professional-grade mypy configuration - Wolt&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://quantlane.com/blog/type-checking-large-codebase/">How to start type-checking a large Python codebase&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Other:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://breadcrumbscollector.tech/mypy-how-to-use-it-in-my-project/">mypy: how to use it in my project?&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://av.tib.eu/media/44935">Europython 2018: Getting Started with Mypy and Type Checking&lt;/a>&lt;/li>
+&lt;/ul></description></item></channel></rss>
